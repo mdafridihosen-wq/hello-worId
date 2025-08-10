@@ -24,7 +24,7 @@
       justify-content: center;
     }
     nav a {
-      color: white;
+      color: red-gold;
       text-decoration: none;
       padding: 15px 20px;
       display: block;
