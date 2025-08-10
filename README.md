@@ -1,22 +1,31 @@
-
+```html
 <!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="মাগুড়া সার্ভিসিং কেয়ার - এসি, ফ্রিজ, জেনারেটর, ওয়েল্ডিং মেশিন, ড্রিল মেশিন, মাইক্রোওভেন এবং ওয়াশিং মেশিন মেরামত ও সার্ভিসিং।">
+  <meta name="keywords" content="মাগুড়া, এসি মেরামত, ফ্রিজ সার্ভিস, জেনারেটর, ওয়েল্ডিং মেশিন, ড্রিল মেশিন, মাইক্রোওভেন, ওয়াশিং মেশিন">
   <title>মাগুড়া সার্ভিসিং কেয়ার</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Noto Sans Bengali', Arial, sans-serif;
       background: #f9fafd;
       margin: 0; padding: 0;
       color: #333;
     }
     header {
       background-color: #004aad;
-      color: gold ;
+      color: white;
       padding: 20px 10px;
       text-align: center;
+    }
+    .logo {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
     }
     nav {
       background-color: #00337f;
@@ -24,7 +33,7 @@
       justify-content: center;
     }
     nav a {
-      color: red-gold;
+      color: white;
       text-decoration: none;
       padding: 15px 20px;
       display: block;
@@ -132,7 +141,7 @@
   <section id="contact">
     <h2>যোগাযোগ</h2>
     <p>ঠিকানা: মাগুড়া সদর, মাগুড়া, বাংলাদেশ</p>
-    <p>ফোন: +8801637853013</p>
+    <p>ফোন: +880 1234 567890</p>
     <p>ইমেইল: info@magracare.com</p>
 
     <h3>যোগাযোগ ফর্ম</h3>
