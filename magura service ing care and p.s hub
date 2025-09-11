@@ -1,0 +1,750 @@
+<div class="language-switcher" data-aos="fade-right">
+    <select onchange="changeLanguage(this.value)">
+        <option value="bn">বাংলা</option>
+        <option value="en">English</option>
+    </select>
+</div>
+
+<div class="dark-mode-toggle" data-aos="fade-right">
+    <button onclick="toggleDarkMode()">ডার্ক মোড</button>
+</div>
+
+<nav data-aos="fade-up">
+    <a href="#home">হোম</a>
+    <a href="#services">সার্ভিস</a>
+    <a href="#tracking">ট্র্যাকিং</a>
+    <a href="#exchange">এক্সচেঞ্জ</a>
+    <a href="#shop">অনলাইন শপ</a>
+    <a href="#subscription">সাবস্ক্রিপশন</a>
+    <a href="#rewards">রিওয়ার্ড</a>
+    <a href="#courses">কোর্স</a>
+    <a href="#marketplace">মার্কেটপ্লেস</a>
+    <a href="#payment">পেমেন্ট</a>
+    <a href="#gamification">গেমিফিকেশন</a>
+    <a href="#contact">যোগাযোগ</a>
+    <a href="#blog">ব্লগ</a>
+    <a href="#dashboard">ড্যাশবোর্ড</a>
+    <a href="#gallery">গ্যালারি</a> <!-- নতুন ফিচার লিঙ্ক -->
+    <a href="#faq">প্রায়শই জিজ্ঞাসিত প্রশ্ন</a> <!-- নতুন ফিচার লিঙ্ক -->
+</nav>
+
+<div class="container">
+    <div class="promo-banner" data-aos="zoom-in">স্পেশাল অফার: আজই বুক করুন এবং ১০% ডিসকাউন্ট পান!</div>
+
+    <h2 data-aos="fade-up">আমাদের সার্ভিস</h2>
+    <ul class="service-list">
+        <li data-aos="fade-up" data-aos-delay="100">মাগুড়ায় AC সার্ভিসিং ও রিপেয়ার <img src="https://maguraservice.com/images/ac-service.jpg" alt="মাগুড়ায় AC সার্ভিসিং এবং রিপেয়ার" class="service-image" loading="lazy"></li>
+        <li data-aos="fade-up" data-aos-delay="200">মাগুড়ায় কুরিয়ার ডেলিভারি <img src="https://maguraservice.com/images/courier-service.jpg" alt="মাগুড়ায় কুরিয়ার ডেলিভারি সার্ভিস" class="service-image" loading="lazy"></li>
+        <li data-aos="fade-up" data-aos-delay="300">মাগুড়ায় মোবাইল রিপেয়ার <img src="https://maguraservice.com/images/mobile-repair.jpg" alt="মাগুড়ায় মোবাইল রিপেয়ার সার্ভিস" class="service-image" loading="lazy"></li>
+        <li data-aos="fade-up" data-aos-delay="400">মাগুড়ায় টাকা এক্সচেঞ্জ <img src="https://maguraservice.com/images/exchange-service.jpg" alt="মাগুড়ায় টাকা এক্সচেঞ্জ সার্ভিস" class="service-image" loading="lazy"></li>
+    </ul>
+    <a href="#book" class="cta-button" data-aos="fade-up">এখন বুক করুন</a>
+    <a href="https://wa.me/+8801234567890?text=আমি%20সার্ভিস%20বুক%20করতে%20চাই" class="cta-button" data-aos="fade-up">WhatsApp-এ যোগাযোগ</a>
+
+    <div id="rewards" class="rewards-system" data-aos="fade-up">
+        <h2>কয়েন রিওয়ার্ড প্রোগ্রাম</h2>
+        <p>প্রতিদিন সাইন-ইন করুন এবং বিজ্ঞাপন বা ভিডিও দেখে কয়েন জিতুন!</p>
+        <button onclick="dailySignIn()">ডেইলি সাইন-ইন</button>
+        <button onclick="watchAd()">বিজ্ঞাপন দেখুন</button>
+        <button onclick="watchVideo()">YouTube ভিডিও দেখুন</button>
+        <p id="reward-result">আপনার কয়েন: ০</p>
+        <form id="redeem-form">
+            <label for="redeem-method">পেমেন্ট মাধ্যম:</label>
+            <select id="redeem-method" name="redeem-method" required>
+                <option value="">নির্বাচন করুন</option>
+                <option value="bkash">বিকাশ</option>
+                <option value="nagad">নগদ</option>
+                <option value="rocket">রকেট</option>
+                <option value="upay">উপায়</option>
+            </select>
+            <label for="redeem-account">অ্যাকাউন্ট নম্বর:</label>
+            <input type="text" id="redeem-account" name="redeem-account" required>
+            <label for="redeem-amount">কয়েন পরিমাণ:</label>
+            <input type="number" id="redeem-amount" name="redeem-amount" required min="500">
+            <button type="button" onclick="redeemCoins()">কয়েন রিডিম করুন</button>
+        </form>
+        <p id="redeem-result"></p>
+    </div>
+
+    <div id="courses" class="online-courses" data-aos="fade-up">
+        <h2>অনলাইন কোর্স</h2>
+        <div class="course-list">
+            <div class="course-item" data-aos="fade-up" data-aos-delay="100">
+                <h3>DIY AC মেইনটেন্যান্স</h3>
+                <p>মূল্য: ১০০০ টাকা</p>
+                <button onclick="buyCourse('ac-maintenance', 1000)">কিনুন</button>
+            </div>
+            <div class="course-item" data-aos="fade-up" data-aos-delay="200">
+                <h3>মোবাইল রিপেয়ার বেসিকস</h3>
+                <p>মূল্য: ১৫০০ টাকা</p>
+                <button onclick="buyCourse('mobile-repair', 1500)">কিনুন</button>
+            </div>
+        </div>
+        <p id="course-result"></p>
+    </div>
+
+    <div id="marketplace" class="service-marketplace" data-aos="fade-up">
+        <h2>লোকাল সার্ভিস মার্কেটপ্লেস</h2>
+        <div class="service-list">
+            <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                <h3>ইলেকট্রিশিয়ান</h3>
+                <p>মূল্য: ৫০০ টাকা/ঘণ্টা</p>
+                <button onclick="bookMarketplaceService('electrician', 500)">বুক করুন</button>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                <h3>প্লাম্বার</h3>
+                <p>মূল্য: ৪০০ টাকা/ঘণ্টা</p>
+                <button onclick="bookMarketplaceService('plumber', 400)">বুক করুন</button>
+            </div>
+        </div>
+        <p id="marketplace-result"></p>
+    </div>
+
+    <div id="subscription" class="subscription" data-aos="fade-up">
+        <h2>সাবস্ক্রিপশন প্যাকেজ</h2>
+        <form id="subscription-form">
+            <label for="package">প্যাকেজ নির্বাচন করুন:</label>
+            <select id="package" name="package" required>
+                <option value="">নির্বাচন করুন</option>
+                <option value="ac-premium">AC প্রিমিয়াম (৫০০০ টাকা/বছর)</option>
+                <option value="courier-monthly">কুরিয়ার মাসিক (৫০০ টাকা/মাস)</option>
+                <option value="mobile-care">মোবাইল কেয়ার (১০০০ টাকা/বছর)</option>
+            </select>
+            <button type="button" onclick="subscribe()">সাবস্ক্রাইব করুন</button>
+        </form>
+        <p id="subscription-result"></p>
+    </div>
+
+    <div id="shop" class="online-shop" data-aos="fade-up">
+        <h2>অনলাইন শপ</h2>
+        <div class="search-filter">
+            <input type="text" id="product-search" placeholder="প্রোডাক্ট সার্চ করুন">
+            <select id="product-filter">
+                <option value="">সব ক্যাটাগরি</option>
+                <option value="ac">AC পার্টস</option>
+                <option value="mobile">মোবাইল পার্টস</option>
+            </select>
+        </div>
+        <div class="product-list">
+            <div class="product-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://maguraservice.com/images/ac-filter.jpg" alt="মাগুড়ায় AC ফিল্টার কিনুন" loading="lazy">
+                <h3>AC ফিল্টার</h3>
+                <p>মূল্য: ৫০০ টাকা</p>
+                <button onclick="addToCart('ac-filter', 500)">কার্টে যোগ করুন</button>
+            </div>
+            <div class="product-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://maguraservice.com/images/mobile-charger.jpg" alt="মাগুড়ায় মোবাইল চার্জার কিনুন" loading="lazy">
+                <h3>মোবাইল চার্জার</h3>
+                <p>মূল্য: ৩০০ টাকা</p>
+                <button onclick="addToCart('mobile-charger', 300)">কার্টে যোগ করুন</button>
+            </div>
+        </div>
+        <p id="cart-result"></p>
+    </div>
+
+    <div id="payment" class="payment-gateway" data-aos="fade-up">
+        <h2>পেমেন্ট করুন</h2>
+        <form id="payment-form">
+            <label for="payment-method">পেমেন্ট মাধ্যম:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="">নির্বাচন করুন</option>
+                <option value="bkash">বিকাশ</option>
+                <option value="nagad">নগদ</option>
+                <option value="rocket">রকেট</option>
+                <option value="upay">উপায়</option>
+            </select>
+            <label for="payment-amount">পরিমাণ:</label>
+            <input type="number" id="payment-amount" name="payment-amount" required min="10">
+            <label for="payment-account">অ্যাকাউন্ট নম্বর:</label>
+            <input type="text" id="payment-account" name="payment-account" required>
+            <button type="button" onclick="processPayment()">পেমেন্ট করুন</button>
+        </form>
+        <p id="payment-result"></p>
+    </div>
+
+    <div id="gamification" class="gamification" data-aos="fade-up">
+        <h2>গেমিফিকেশন</h2>
+        <p>আপনার ব্যাজ: <span id="badges">কোনো ব্যাজ নেই</span></p>
+        <p>লিডারবোর্ড পজিশন: <span id="leaderboard-position">লোড হচ্ছে...</span></p>
+        <button onclick="checkBadges()">ব্যাজ চেক করুন</button>
+    </div>
+
+    <div class="affiliate-links" data-aos="fade-up">
+        <h2>আমাদের পার্টনার প্রোডাক্ট</h2>
+        <a href="https://daraz.com.bd/link" target="_blank" rel="nofollow">দারাজ থেকে AC পার্টস কিনুন</a>
+        <a href="https://bikroy.com/link" target="_blank" rel="nofollow">বিক্রয় থেকে মোবাইল আনুষাঙ্গিক</a>
+    </div>
+
+    <div class="referral-program" data-aos="fade-up">
+        <h2>রেফারেল প্রোগ্রাম</h2>
+        <p>বন্ধুকে আমন্ত্রণ জানান এবং ১০০ টাকা ডিসকাউন্ট পান!</p>
+        <form id="referral-form">
+            <label for="referral-email">বন্ধুর ইমেইল:</label>
+            <input type="email" id="referral-email" name="referral-email" required>
+            <button type="button" onclick="submitReferral()">রেফার করুন</button>
+        </form>
+        <p id="referral-result"></p>
+    </div>
+
+    <div id="exchange" class="exchange-option" data-aos="fade-up">
+        <h2>টাকা এক্সচেঞ্জ করুন</h2>
+        <form id="exchange-form">
+            <label for="from-method">প্রেরক পেমেন্ট মাধ্যম:</label>
+            <select id="from-method" name="from-method" required>
+                <option value="">নির্বাচন করুন</option>
+                <option value="bkash">বিকাশ</option>
+                <option value="nagad">নগদ</option>
+                <option value="rocket">রকেট</option>
+                <option value="upay">উপায়</option>
+                <option value="usd">ডলার (USD)</option>
+            </select>
+            <label for="to-method">প্রাপক পেমেন্ট মাধ্যম:</label>
+            <select id="to-method" name="to-method" required>
+                <option value="">নির্বাচন করুন</option>
+                <option value="bkash">বিকাশ</option>
+                <option value="nagad">নগদ</option>
+                <option value="rocket">রকেট</option>
+                <option value="upay">উপায়</option>
+                <option value="bdt">টাকা (BDT)</option>
+            </select>
+            <label for="amount">পরিমাণ:</label>
+            <input type="number" id="amount" name="amount" required>
+            <label for="from-account">প্রেরক অ্যাকাউন্ট নম্বর:</label>
+            <input type="text" id="from-account" name="from-account" required>
+            <label for="to-account">প্রাপক অ্যাকাউন্ট নম্বর:</label>
+            <input type="text" id="to-account" name="to-account" required>
+            <label for="otp">OTP কোড:</label>
+            <input type="text" id="otp" name="otp" required>
+            <button type="button" onclick="exchangeMoney()">এক্সচেঞ্জ করুন</button>
+        </form>
+        <p id="exchange-result"></p>
+    </div>
+
+    <div id="tracking" class="service-tracking" data-aos="fade-up">
+        <h2>সার্ভিস ট্র্যাকিং</h2>
+        <form>
+            <label for="tracking-id">ট্র্যাকিং আইডি:</label>
+            <input type="text" id="tracking-id" name="tracking-id" required>
+            <button type="button" onclick="trackService()">ট্র্যাক করুন</button>
+        </form>
+        <p id="tracking-result"></p>
+        <div id="tracking-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.117552320953!2d89.58362231540202!3d23.487477584721047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe96b7e4e6b3b5%3A0x3c9b0b8b7e0e7c1a!2sMagura!5e0!3m2!1sen!2sbd!4v1696411234567!5m2!1sen!2sbd" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div id="dashboard" class="customer-dashboard" data-aos="fade-up">
+        <h2>কাস্টমার ড্যাশবোর্ড</h2>
+        <form>
+            <label for="customer-id">কাস্টমার আইডি:</label>
+            <input type="text" id="customer-id" name="customer-id" required>
+            <label for="password">পাসওয়ার্ড:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" onclick="loginCustomer()">লগইন</button>
+        </form>
+        <div id="dashboard-content" style="display: none;">
+            <h3>আপনার সার্ভিস ইতিহাস</h3>
+            <p id="service-history">ইতিহাস লোড হচ্ছে...</p>
+            <h3>আপনার কয়েন</h3>
+            <p id="coin-balance">কয়েন: ০</p>
+        </div>
+    </div>
+
+    <div id="contact" class="contact" data-aos="fade-up">
+        <h2>যোগাযোগ করুন</h2>
+        <p>ঠিকানা: ১২৩, মাগুড়া সিটি, বাংলাদেশ</p>
+        <p>ফোন: +৮৮০ ১২৩৪-৫৬৭৮৯০</p>
+        <p>ইমেইল: info@maguraservice.com</p>
+        <form id="contact-form">
+            <label for="name">নাম:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">ইমেইল:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">মেসেজ:</label>
+            <textarea id="message" name="message" required></textarea>
+            <div class="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div>
+            <button type="button" onclick="sendContactForm()">পাঠান</button>
+        </form>
+        <p id="contact-result"></p>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.117552320953!2d89.58362231540202!3d23.487477584721047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe96b7e4e6b3b5%3A0x3c9b0b8b7e0e7c1a!2sMagura!5e0!3m2!1sen!2sbd!4v1696411234567!5m2!1sen!2sbd" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div id="blog" class="blog" data-aos="fade-up">
+        <h2>আমাদের ব্লগ</h2>
+        <div class="blog-item" data-aos="fade-right">
+            <h3>কীভাবে আপনার AC নিজে পরিষ্কার করবেন</h3>
+            <p>একটি পরিষ্কার AC আপনার ঘরকে শীতল এবং আরামদায়ক রাখে। এখানে কিছু টিপস...</p>
+            <a href="#" class="cta-button">বিস্তারিত পড়ুন</a>
+        </div>
+        <div class="blog-item" data-aos="fade-right">
+            <h3>মাগুড়ায় কীভাবে সেরা কুরিয়ার সার্ভিস বেছে নেবেন</h3>
+            <p>দ্রুত এবং নিরাপদ কুরিয়ার সার্ভিসের জন্য আমাদের টিপস পড়ুন।</p>
+            <a href="#" class="cta-button">বিস্তারিত পড়ুন</a>
+        </div>
+    </div>
+
+    <div class="newsletter" data-aos="fade-up">
+        <h2>নিউজলেটার সাবস্ক্রাইব করুন</h2>
+        <form>
+            <label for="newsletter-email">ইমেইল:</label>
+            <input type="email" id="newsletter-email" name="newsletter-email" required>
+            <button type="submit">সাবস্ক্রাইব করুন</button>
+        </form>
+    </div>
+
+    <!-- নতুন ফিচার: গ্যালারি -->
+    <div id="gallery" class="gallery" data-aos="fade-up">
+        <h2>আমাদের কাজের ছবি</h2>
+        <a href="https://maguraservice.com/images/work1-large.jpg" data-lightbox="gallery"><img src="https://maguraservice.com/images/work1.jpg" alt="মাগুড়ায় AC সার্ভিসিং কাজের ছবি" loading="lazy"></a>
+        <a href="https://maguraservice.com/images/work2-large.jpg" data-lightbox="gallery"><img src="https://maguraservice.com/images/work2.jpg" alt="মাগুড়ায় মোবাইল রিপেয়ার কাজের ছবি" loading="lazy"></a>
+        <a href="https://maguraservice.com/images/work3-large.jpg" data-lightbox="gallery"><img src="https://maguraservice.com/images/work3.jpg" alt="মাগুড়ায় কুরিয়ার ডেলিভারি কাজের ছবি" loading="lazy"></a>
+    </div>
+
+    <!-- নতুন ফিচার: FAQ -->
+    <div id="faq" class="faq" data-aos="fade-up">
+        <h2>প্রায়শই জিজ্ঞাসিত প্রশ্ন</h2>
+        <div class="faq-item">
+            <h4 onclick="toggleFAQ(this)">কীভাবে সার্ভিস বুক করব?</h4>
+            <p>আপনি আমাদের ওয়েবসাইটে "এখন বুক করুন" বাটনে ক্লিক করে সার্ভিস বুক করতে পারেন।</p>
+        </div>
+        <div class="faq-item">
+            <h4 onclick="toggleFAQ(this)">পেমেন্ট মেথড কী কী?</h4>
+            <p>আমরা বিকাশ, নগদ, রকেট, এবং উপায় গ্রহণ করি।</p>
+        </div>
+        <div class="faq-item">
+            <h4 onclick="toggleFAQ(this)">কয়েন রিডিম কীভাবে করব?</h4>
+            <p>রিওয়ার্ড সেকশনে আপনার কয়েন রিডিম করার অপশন রয়েছে। ন্যূনতম ৫০০ কয়েন প্রয়োজন।</p>
+        </div>
+    </div>
+
+    <!-- নতুন ফিচার: রিভিউ সিস্টেম -->
+    <div id="reviews" class="review-system" data-aos="fade-up">
+        <h2>গ্রাহক রিভিউ</h2>
+        <div class="review-item">
+            <p>জন দো: "দ্রুত এবং নির্ভরযোগ্য AC সার্ভিস!"</p>
+        </div>
+        <div class="review-item">
+            <p>জেন দো: "মোবাইল রিপেয়ারে সেরা!"</p>
+        </div>
+        <form id="review-form">
+            <label for="review-rating">রেটিং:</label>
+            <select id="review-rating" name="review-rating" required>
+                <option value="">নির্বাচন করুন</option>
+                <option value="5">৫ তারা</option>
+                <option value="4">৪ তারা</option>
+                <option value="3">৩ তারা</option>
+                <option value="2">২ তারা</option>
+                <option value="1">১ তারা</option>
+            </select>
+            <label for="review-text">রিভিউ:</label>
+            <textarea id="review-text" name="review-text" required></textarea>
+            <button type="button" onclick="submitReview()">রিভিউ জমা দিন</button>
+        </form>
+        <p id="review-result"></p>
+    </div>
+</div>
+
+<a href="#book" class="floating-cta" data-aos="zoom-in">এখন বুক করুন</a>
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<div class="notification" id="notification">
+    <p id="notification-message">অ্যাপয়েন্টমেন্ট সফলভাবে বুক করা হয়েছে!</p>
+    <button onclick="closeNotification()">বন্ধ করুন</button>
+</div>
+
+<div class="cookie-consent" id="cookie-consent">
+    <p>আমরা কুকি ব্যবহার করি। <a href="/privacy-policy">বিস্তারিত</a></p>
+    <button onclick="acceptCookies()">সম্মতি দিন</button>
+</div>
+
+<footer data-aos="fade-up">
+    <p>© ২০২৫ মাগুড়া সার্ভিসিং কেয়ার। সর্বস্বত্ব সংরক্ষিত।</p>
+    <div class="social-links">
+        <a href="https://facebook.com/magracare" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="share-buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=example.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=example.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+    <a href="/privacy-policy">প্রাইভেসি পলিসি</a> | <a href="/terms">টার্মস অফ সার্ভিস</a>
+    <div id="google_translate_element"></div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-ID"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+    AOS.init();
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+    function changeLanguage(lang) {
+        if (lang === 'en') {
+            window.location.href = '/en'; // ইংরেজি পেজে রিডাইরেক্ট
+        } else {
+            window.location.href = '/bn'; // বাংলা পেজে রিডাইরেক্ট
+        }
+    }
+    function toggleFAQ(element) {
+        element.parentElement.classList.toggle('active');
+    }
+    function closeNotification() {
+        document.getElementById('notification').style.display = 'none';
+    }
+    function acceptCookies() {
+        document.getElementById('cookie-consent').style.display = 'none';
+    }
+    async function trackService() {
+        const trackingId = document.getElementById('tracking-id').value;
+        try {
+            const response = await fetch(`/api/track/${trackingId}`);
+            const result = await response.json();
+            document.getElementById('tracking-result').innerText = `স্ট্যাটাস: ${result.status}, লোকেশন: ${result.location}`;
+        } catch (error) {
+            document.getElementById('tracking-result').innerText = 'ট্র্যাকিং আইডি অবৈধ।';
+        }
+    }
+    async function loginCustomer() {
+        const customerId = document.getElementById('customer-id').value;
+        const password = document.getElementById('password').value;
+        try {
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ customerId, password })
+            });
+            const result = await response.json();
+            document.getElementById('dashboard-content').style.display = 'block';
+            document.getElementById('service-history').innerText = result.history;
+            document.getElementById('coin-balance').innerText = `কয়েন: ${result.coins}`;
+        } catch (error) {
+            showNotification('লগইন ব্যর্থ। আবার চেষ্টা করুন।');
+        }
+    }
+    async function subscribe() {
+        const packageValue = document.getElementById('package').value;
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ package: packageValue })
+            });
+            const result = await response.json();
+            document.getElementById('subscription-result').innerText = 'সাবস্ক্রিপশন সফল!';
+            showNotification('সাবস্ক্রিপশন সফল!');
+        } catch (error) {
+            document.getElementById('subscription-result').innerText = 'সাবস্ক্রিপশন ব্যর্থ।';
+        }
+    }
+    async function addToCart(productId, price) {
+        try {
+            const response = await fetch('/api/cart/add', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ productId, price })
+            });
+            const result = await response.json();
+            document.getElementById('cart-result').innerText = 'কার্টে যোগ হয়েছে!';
+            showNotification('কার্টে যোগ হয়েছে!');
+        } catch (error) {
+            document.getElementById('cart-result').innerText = 'কার্টে যোগ ব্যর্থ।';
+        }
+    }
+    async function submitReferral() {
+        const email = document.getElementById('referral-email').value;
+        try {
+            const response = await fetch('/api/referral', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            const result = await response.json();
+            document.getElementById('referral-result').innerText = 'রেফারেল সফল!';
+            showNotification('রেফারেল সফল!');
+        } catch (error) {
+            document.getElementById('referral-result').innerText = 'রেফারেল ব্যর্থ।';
+        }
+    }
+    async function exchangeMoney() {
+        const fromMethod = document.getElementById('from-method').value;
+        const toMethod = document.getElementById('to-method').value;
+        const amount = parseFloat(document.getElementById('amount').value);
+        const fromAccount = document.getElementById('from-account').value;
+        const toAccount = document.getElementById('to-account').value;
+        const otp = document.getElementById('otp').value;
+
+        if (!fromMethod || !toMethod || !amount || !fromAccount || !toAccount || !otp) {
+            document.getElementById('exchange-result').innerText = 'সব তথ্য পূরণ করুন';
+            return;
+        }
+
+        try {
+            let finalAmount = amount;
+            if (fromMethod === 'usd' || toMethod === 'bdt') {
+                const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+                const data = await response.json();
+                const rate = data.rates.BDT;
+                finalAmount = fromMethod === 'usd' ? amount * rate : amount / rate;
+            }
+
+            const commission = finalAmount * 0.02;
+            const amountAfterCommission = finalAmount - commission;
+
+            const response = await fetch('/api/exchange', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    fromMethod,
+                    toMethod,
+                    amount,
+                    fromAccount,
+                    toAccount,
+                    otp,
+                    commission,
+                    finalAmount: amountAfterCommission
+                })
+            });
+
+            const result = await response.json();
+            document.getElementById('exchange-result').innerText = `লেনদেন সফল! কমিশন: ${commission} টাকা, প্রাপক পাবেন: ${amountAfterCommission} টাকা`;
+            showNotification('লেনদেন সফলভাবে সম্পন্ন হয়েছে!');
+        } catch (error) {
+            document.getElementById('exchange-result').innerText = 'লেনদেন ব্যর্থ। আবার চেষ্টা করুন।';
+        }
+    }
+    async function dailySignIn() {
+        try {
+            const response = await fetch('/api/rewards/signin', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId: 'user123' })
+            });
+            const result = await response.json();
+            document.getElementById('reward-result').innerText = `আপনার কয়েন: ${result.coins}`;
+            showNotification('ডেইলি সাইন-ইন সফল! ১০ কয়েন যোগ হয়েছে।');
+        } catch (error) {
+            showNotification('সাইন-ইন ব্যর্থ। আবার চেষ্টা করুন।');
+        }
+    }
+    async function watchAd() {
+        try {
+            const response = await fetch('/api/rewards/ad', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId: 'user123' })
+            });
+            const result = await response.json();
+            document.getElementById('reward-result').innerText = `আপনার কয়েন: ${result.coins}`;
+            showNotification('বিজ্ঞাপন দেখা সফল! ৫ কয়েন যোগ হয়েছে।');
+        } catch (error) {
+            showNotification('বিজ্ঞাপন দেখা ব্যর্থ। আবার চেষ্টা করুন।');
+        }
+    }
+    async function watchVideo() {
+        try {
+            const response = await fetch('/api/rewards/video', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId: 'user123' })
+            });
+            const result = await response.json();
+            document.getElementById('reward-result').innerText = `আপনার কয়েন: ${result.coins}`;
+            showNotification('ভিডিও দেখা সফল! ১০ কয়েন যোগ হয়েছে।');
+        } catch (error) {
+            showNotification('ভিডিও দেখা ব্যর্থ। আবার চেষ্টা করুন।');
+        }
+    }
+    async function redeemCoins() {
+        const method = document.getElementById('redeem-method').value;
+        const account = document.getElementById('redeem-account').value;
+        const amount = parseInt(document.getElementById('redeem-amount').value);
+
+        if (!method || !account || amount < 500) {
+            document.getElementById('redeem-result').innerText = 'সব তথ্য পূরণ করুন এবং ন্যূনতম ৫০০ কয়েন রিডিম করুন।';
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/rewards/redeem', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId: 'user123', method, account, amount })
+            });
+            const result = await response.json();
+            document.getElementById('reward-result').innerText = `আপনার কয়েন: ${result.coins}`;
+            document.getElementById('redeem-result').innerText = `রিডিম সফল! ${amount} টাকা ${method} এ পাঠানো হয়েছে।`;
+            showNotification('কয়েন রিডিম সফল!');
+        } catch (error) {
+            document.getElementById('redeem-result').innerText = 'রিডিম ব্যর্থ। আবার চেষ্টা করুন।';
+        }
+    }
+    async function buyCourse(courseId, price) {
+        try {
+            const response = await fetch('/api/courses/buy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId: 'user123', courseId, price })
+            });
+            const result = await response.json();
+            document.getElementById('course-result').innerText = 'কোর্স ক্রয় সফল!';
+            showNotification('কোর্স ক্রয় সফল! আপনার ইমেইলে লিঙ্ক পাঠানো হয়েছে।');
+        } catch (error) {
+            document.getElementById('course-result').innerText = 'ক্রয় ব্যর্থ। আবার চেষ্টা করুন।';
+        }
+    }
+    async function bookMarketplaceService(serviceId, price) {
+        try {
+            const response = await fetch('/api/marketplace/book', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId: 'user123', serviceId, price })
+            });
+            const result = await response.json();
+            document.getElementById('marketplace-result').innerText = 'সার্ভিস বুকিং সফল!';
+            showNotification('সার্ভিস বুকিং সফল!');
+        } catch (error) {
+            document.getElementById('marketplace-result').innerText = 'বুকিং ব্যর্থ। আবার চেষ্টা করুন।';
+        }
+    }
+    async function checkBadges() {
+        try {
+            const response = await fetch('/api/gamification/badges', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId: 'user123' })
+            });
+            const result = await response.json();
+            document.getElementById('badges').innerText = result.badges.join(', ') || 'কোনো ব্যাজ নেই';
+            document.getElementById('leaderboard-position').innerText = `আপনার পজিশন: ${result.position}`;
+            showNotification('ব্যাজ এবং লিডারবোর্ড আপডেট হয়েছে!');
+        } catch (error) {
+            showNotification('ব্যাজ চেক ব্যর্থ।');
+        }
+    }
+    async function processPayment() {
+        const method = document.getElementById('payment-method').value;
+        const amount = parseFloat(document.getElementById('payment-amount').value);
+        const account = document.getElementById('payment-account').value;
+
+        if (!method || !amount || !account) {
+            document.getElementById('payment-result').innerText = 'সব তথ্য পূরণ করুন।';
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/payment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ method, amount, account, userId: 'user123' })
+            });
+            const result = await response.json();
+            document.getElementById('payment-result').innerText = `পেমেন্ট সফল! ট্রানজেকশন আইডি: ${result.transactionId}`;
+            showNotification('পেমেন্ট সফলভাবে সম্পন্ন হয়েছে!');
+        } catch (error) {
+            document.getElementById('payment-result').innerText = 'পেমেন্ট ব্যর্থ। আবার চেষ্টা করুন।';
+        }
+    }
+    function showNotification(message) {
+        document.getElementById('notification-message').innerText = message;
+        document.getElementById('notification').style.display = 'block';
+        setTimeout(() => document.getElementById('notification').style.display = 'none', 5000);
+    }
+    // নতুন ফিচার: প্রোডাক্ট সার্চ
+    document.getElementById('product-search').addEventListener('input', function() {
+        const search = this.value.toLowerCase();
+        document.querySelectorAll('.product-item').forEach(item => {
+            const name = item.querySelector('h3').innerText.toLowerCase();
+            item.style.display = name.includes(search) ? 'block' : 'none';
+        });
+    });
+    // নতুন ফিচার: যোগাযোগ ফর্ম সেন্ড
+    async function sendContactForm() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const recaptcha = grecaptcha.getResponse();
+
+        if (!name || !email || !message || !recaptcha) {
+            document.getElementById('contact-result').innerText = 'সব তথ্য পূরণ করুন।';
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message, recaptcha })
+            });
+            const result = await response.json();
+            document.getElementById('contact-result').innerText = 'মেসেজ পাঠানো সফল!';
+            showNotification('মেসেজ পাঠানো হয়েছে!');
+        } catch (error) {
+            document.getElementById('contact-result').innerText = 'মেসেজ পাঠানো ব্যর্থ।';
+        }
+    }
+    // নতুন ফিচার: রিভিউ সাবমিট
+    async function submitReview() {
+        const rating = document.getElementById('review-rating').value;
+        const text = document.getElementById('review-text').value;
+
+        if (!rating || !text) {
+            document.getElementById('review-result').innerText = 'সব তথ্য পূরণ করুন।';
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/reviews/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ rating, text })
+            });
+            const result = await response.json();
+            document.getElementById('review-result').innerText = 'রিভিউ জমা দেয়া সফল!';
+            showNotification('রিভিউ জমা দেয়া হয়েছে!');
+        } catch (error) {
+            document.getElementById('review-result').innerText = 'রিভিউ জমা দেয়া ব্যর্থ।';
+        }
+    }
+    let player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('youtube-player', {
+            height: '200',
+            width: '300',
+            videoId: 'dQw4w9WgXcQ', // প্রকৃত ভিডিও আইডি
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+    function onPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.ENDED) {
+            watchVideo();
+        }
+    }
+</script>
+<!-- Tawk.to চ্যাটবট -->
+<script>
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function(){
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/your-tawk-id/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-your-client-id"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-your-client-id" data-ad-slot="your-ad-slot" data-ad-format="auto"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- YouTube API -->
+<div id="youtube-player"></div>
