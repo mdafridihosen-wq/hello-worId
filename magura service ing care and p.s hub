@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Definition List</title>
+    </head>
+<body>
+<dl>
+    <dt><b>HTML</b></dt>
+    <dd>This stands for Hyper Text Markup Langu
+        age</dd>
+    <dt><b>HTTP</b></dt>
+    <dd>This stands for Hyper Text Transfer Pro
+        tocol</dd>
+</dl>
+</body>
+</html>
+
 <div class="language-switcher" data-aos="fade-right">
     <select onchange="changeLanguage(this.value)">
         <option value="bn">বাংলা</option>
